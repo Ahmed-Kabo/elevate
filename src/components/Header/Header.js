@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import BG from "../../Assets/bg.jpg";
-import ImageHeader from "../../Assets/head.jpg";
 import { Hide } from "../Halper";
 import { motion } from "framer-motion";
 import {
@@ -9,7 +8,7 @@ import {
   slideTop,
   scaleOut,
 } from "../../Animation/Animation";
-const Header = () => {
+const Header = (props) => {
   return (
     <HeaderStyled>
       <motion.header variants={scaleOut} initial="show" animate="hidden">
@@ -17,15 +16,14 @@ const Header = () => {
           <div className="main-flex">
             <div className="content">
               <Hide>
-                <motion.h3 variants={fadeIn}>OutSourceGiant </motion.h3>
+                <motion.h3 variants={fadeIn}>{props.h3} </motion.h3>
                 <Hide>
                   <div>
                     <Hide>
-                      <motion.h1 variants={slideTop}>Exceptional</motion.h1>
+                      <motion.h1 variants={slideTop}>{props.lineOne}</motion.h1>
                     </Hide>
-
-                    <motion.h1 variants={slideTop}>Urban</motion.h1>
-                    <motion.h1 variants={slideTop}>Environments</motion.h1>
+                    <motion.h1 variants={slideTop}>{props.lineTwo}</motion.h1>
+                    <motion.h1 variants={slideTop}>{props.lineThree}</motion.h1>
                   </div>
                 </Hide>
                 <Hide>
@@ -36,7 +34,11 @@ const Header = () => {
 
             <Hide>
               <div className="img">
-                <motion.img variants={slideLeft} src={ImageHeader} alt="/" />
+                <motion.img
+                  variants={slideLeft}
+                  src={props.image}
+                  alt={props.h3}
+                />
               </div>
             </Hide>
           </div>
@@ -73,6 +75,10 @@ const HeaderStyled = styled.section`
       align-items: center;
       justify-content: center;
       z-index: 1;
+      overflow: hidden;
+      @media screen and (max-width: 992px) {
+        width: 90%;
+      }
       .content {
         flex: 1 0 0;
         position: absolute;
@@ -87,9 +93,12 @@ const HeaderStyled = styled.section`
         h1 {
           color: var(--lightcolor);
 
-          font-size: 7.5rem;
+          font-size: 6.5rem;
           font-weight: bold;
-          line-height: 1.3;
+          line-height: 1.1;
+          @media screen and (max-width: 992px) {
+            font-size: 3.5rem;
+          }
         }
         .line {
           width: 100px;
@@ -101,9 +110,13 @@ const HeaderStyled = styled.section`
       .img {
         position: absolute;
         top: 50%;
-        right: 0;
+        /* right: 0; */
         transform: translate(0, -50%);
         overflow: hidden;
+        height: 650px;
+        @media screen and (max-width: 992px) {
+          display: none;
+        }
         /* width: 100%; */
         img {
           width: 100%;

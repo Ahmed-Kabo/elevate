@@ -11,23 +11,30 @@ export const GlobalStyle = createGlobalStyle`
         --darkGray:#333;
         --lightGray:#e1e1e1;
         --darkGray:#181818;
-        --yellowColoe:#f8a442 ;
+        --yellow:#ff8601 ;
+        --normalFont : "Poppins", sans-serif;
     }
-
-
     *{
         padding:0 ;
         margin:0 ;
         box-sizing:border-box ;
     }
+    ::selection {
+        background: var(--yellow);
+        color: rgb(255, 255, 255);
+    }
     body{
         font-family: 'Bodoni Moda', serif;
+        background: var(--darkGray);
+        overflow-x: hidden;
+        color: var(--lightcolor);
     }
     ul{
         list-style: none;
     }
     a {
         text-decoration:none ;
+        color: inherit;
     }
 
 `;
