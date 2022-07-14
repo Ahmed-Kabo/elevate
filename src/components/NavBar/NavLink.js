@@ -44,7 +44,7 @@ const NavLinks = ({ isOpen }) => {
           </Hide>
           <Hide>
             <motion.li variants={TitleAnimation}>
-              <NavLink to="out-team">our team</NavLink>
+              <NavLink to="our-team">our team</NavLink>
             </motion.li>
           </Hide>
           <Hide>
