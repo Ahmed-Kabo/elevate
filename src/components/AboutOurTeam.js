@@ -65,15 +65,26 @@ const OurTeamStyled = styled.section`
     position: absolute;
     transform: rotate(-90deg);
     top: 20%;
-    left: 0;
+    left: -2%;
     font-size: 3.5rem;
     color: var(--yellow);
+    @media screen and (max-width: 992px) {
+      position: relative;
+      transform: rotate(0deg);
+      top: auto;
+      left: auto;
+    }
   }
+
   .our-team-flex {
     display: flex;
 
+    @media screen and (max-width: 992px) {
+      flex-direction: column;
+    }
+
     .ourteam-group {
-      flex: 1;
+      flex: 4;
       display: grid;
       padding: 1rem;
       /* overflow: hidden; */
@@ -85,7 +96,7 @@ const OurTeamStyled = styled.section`
       }
     }
     .team-content {
-      flex: 1;
+      flex: 3;
       padding: 1rem;
       .heading {
         font-size: 3.5rem;

@@ -39,7 +39,7 @@ const NavLinks = ({ isOpen }) => {
           </Hide>
           <Hide>
             <motion.li variants={TitleAnimation}>
-              <NavLink to="protfolio">protfolio</NavLink>
+              <NavLink to="services">services</NavLink>
             </motion.li>
           </Hide>
           <Hide>
@@ -49,7 +49,7 @@ const NavLinks = ({ isOpen }) => {
           </Hide>
           <Hide>
             <motion.li variants={TitleAnimation}>
-              <NavLink to="contact-us">contact us</NavLink>
+              <NavLink to="contact">contact us</NavLink>
             </motion.li>
           </Hide>
         </motion.ul>

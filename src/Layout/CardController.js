@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const CardController = (props) => {
   return (
-    <CardStyled>
+    <CardStyled className={props.className}>
       <div className="img">
         <img src={props.image} alt="/" />
         {/* <div className="overlay"></div> */}
@@ -18,12 +18,18 @@ const CardController = (props) => {
 
 const CardStyled = styled.div`
   position: relative;
+  display: block;
   width: 100%;
-  min-height: 220px;
+  height: 100%;
   overflow: hidden;
   transition: all 0.5s;
   &:nth-child(2n + 1) {
     top: -60px;
+  }
+  @media screen and (max-width: 1280px) {
+    &:nth-child(2n + 1) {
+      top: auto;
+    }
   }
 
   .img {
@@ -62,6 +68,7 @@ const CardStyled = styled.div`
     .name {
       font-size: 2rem;
       text-shadow: 0px 4px 13px #3f3f3f;
+      transition: all 0.5s;
     }
     .dec {
       font-size: 1.2rem;
@@ -71,6 +78,7 @@ const CardStyled = styled.div`
       font-size: 0.7rem;
       letter-spacing: 3px;
       font-weight: bold;
+      transition: all 0.5s;
     }
   }
 
