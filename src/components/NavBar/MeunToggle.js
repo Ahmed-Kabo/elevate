@@ -16,7 +16,7 @@ const ButtonStyled = styled.button`
   width: 70px;
   height: 70px;
   /* background: var(--lightcolor); */
-  position: absolute;
+  position: fixed;
   top: 5%;
   right: 5%;
   transform: translate(-5%, -5%);

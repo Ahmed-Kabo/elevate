@@ -1,7 +1,6 @@
 import { Container } from "react-bootstrap";
 import styled from "styled-components";
 import { SmallBox } from "./Halper";
-
 const About = () => {
   return (
     <>

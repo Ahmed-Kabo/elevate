@@ -5,11 +5,14 @@ import AboutMainInfo from "../components/AboutMainInfo";
 import PortfolioAbout from "../components/PortfolioAbout";
 import AboutOurTeam from "../components/AboutOurTeam";
 import Footer from "../components/Footer";
+import { motion } from "framer-motion";
+import { PageTransition } from "../Animation/Animation";
+
 const AboutUs = () => {
   return (
-    <>
+    <motion.div variants={PageTransition} initial="hidden" animate="show">
       <Header
-        h3="About us"
+        h3="Elevate"
         lineOne="line one"
         lineTwo="line two"
         lineThree="line Three"
@@ -19,7 +22,7 @@ const AboutUs = () => {
       <PortfolioAbout />
       <AboutOurTeam />
       <Footer />
-    </>
+    </motion.div>
   );
 };
 

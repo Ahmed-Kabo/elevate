@@ -32,7 +32,7 @@ const Info = () => {
               <li>MULTIFAMILY RESIDENTIAL</li>
             </ul>
             <MainButton>
-              <Link to="">view more</Link>
+              <Link to="services">view more</Link>
             </MainButton>
           </div>
           <div className="image">

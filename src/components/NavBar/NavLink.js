@@ -9,12 +9,12 @@ import {
 } from "../../Animation/Animation";
 import { Hide } from "../Halper";
 
-const NavLinks = ({ isOpen }) => {
+const NavLinks = ({ isOpen, toggle }) => {
   return (
     <>
       <MenuStyled>
         <motion.h1>
-          <motion.span variants={HeaderAnimation}>e</motion.span>
+          <motion.span variants={HeaderAnimation}>E</motion.span>
           <motion.span variants={HeaderAnimation}>l</motion.span>
           <motion.span variants={HeaderAnimation}>e</motion.span>
           <motion.span variants={HeaderAnimation}>v</motion.span>
@@ -23,32 +23,32 @@ const NavLinks = ({ isOpen }) => {
           <motion.span variants={HeaderAnimation}>e</motion.span>
         </motion.h1>
         <motion.ul
-          variants={slideBar}
+          variants={TitleAnimation}
           initial={false}
-          animate={isOpen ? "open" : "close"}
+          animate={isOpen ? "open" : "closed"}
         >
           <Hide>
-            <motion.li variants={TitleAnimation}>
+            <motion.li variants={TitleAnimation} onClick={toggle}>
               <NavLink to="/">Home</NavLink>
             </motion.li>
           </Hide>
           <Hide>
-            <motion.li variants={TitleAnimation}>
+            <motion.li variants={TitleAnimation} onClick={toggle}>
               <NavLink to="about">About us</NavLink>
             </motion.li>
           </Hide>
           <Hide>
-            <motion.li variants={TitleAnimation}>
+            <motion.li variants={TitleAnimation} onClick={toggle}>
               <NavLink to="services">services</NavLink>
             </motion.li>
           </Hide>
           <Hide>
-            <motion.li variants={TitleAnimation}>
+            <motion.li variants={TitleAnimation} onClick={toggle}>
               <NavLink to="our-team">our team</NavLink>
             </motion.li>
           </Hide>
           <Hide>
-            <motion.li variants={TitleAnimation}>
+            <motion.li variants={TitleAnimation} onClick={toggle}>
               <NavLink to="contact">contact us</NavLink>
             </motion.li>
           </Hide>
@@ -59,13 +59,13 @@ const NavLinks = ({ isOpen }) => {
 };
 
 const MenuStyled = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--lightcolor);
-  position: relative;
+  position: fixed;
   h1 {
     position: absolute;
     top: 50%;
@@ -77,7 +77,7 @@ const MenuStyled = styled.div`
     z-index: 1;
     font-weight: 800;
     //color: var(--darkGray);
-    color: #f79d4330;
+    color: #55555555;
     pointer-events: none;
     display: flex;
     /* background: linear-gradient(to left, #f8a34288, #dd2c5a88);
@@ -103,7 +103,7 @@ const MenuStyled = styled.div`
         transition: all 0.3s;
         &:hover,
         &.active {
-          color: #f8a342;
+          color: var(--yellow);
         }
       }
     }

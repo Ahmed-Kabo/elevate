@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import IMAGE from "../Assets/bulding.jpg";
 import { MainButton } from "./Halper";
@@ -18,7 +19,9 @@ const Development = () => {
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
             itaque!
           </p>
-          <MainButton>contact</MainButton>
+          <MainButton>
+            <Link to="contact">contact</Link>
+          </MainButton>
         </div>
       </div>
     </DevelopmentStyled>

@@ -1,8 +1,29 @@
-export const slideLeft = {
+export const PageTransition = {
+  hidden: {
+    opacity: 0,
+    y: 200,
+    transition: {
+      duration: 0.5,
+      when: "beforeChildren",
+      delayChildren: 0.5,
+    },
+  },
   show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      when: "beforeChildren",
+      delayChildren: 0.5,
+    },
+  },
+};
+
+export const slideLeft = {
+  hidden: {
     x: "100%",
   },
-  hidden: {
+  show: {
     x: "0%",
     transition: {
       duration: 0.5,
@@ -12,10 +33,10 @@ export const slideLeft = {
 };
 
 export const fadeIn = {
-  show: {
+  hidden: {
     opacity: 0,
   },
-  hidden: {
+  show: {
     opacity: 1,
 
     transition: {
@@ -27,10 +48,10 @@ export const fadeIn = {
 };
 
 export const slideTop = {
-  show: {
+  hidden: {
     y: 300,
   },
-  hidden: {
+  show: {
     y: 0,
     transition: {
       duration: 0.5,
@@ -41,19 +62,18 @@ export const slideTop = {
 };
 
 export const scaleOut = {
-  show: {
+  hidden: {
     scale: 1.1,
     transition: {
-      duration: 0.5,
+      duration: 0.8,
       when: "beforeChildren",
       staggerChildren: 0.25,
     },
   },
-  hidden: {
+  show: {
     scale: 1,
-
     transition: {
-      duration: 0.5,
+      duration: 0.8,
       when: "beforeChildren",
       staggerChildren: 0.25,
     },
@@ -65,7 +85,7 @@ export const slideBar = {
     x: "0%",
     transition: {
       type: "tween",
-      duration: 0.8,
+      duration: 0.4,
       when: "beforeChildren",
       staggerChildren: 0.2,
     },
@@ -74,8 +94,8 @@ export const slideBar = {
     x: "100%",
     transition: {
       type: "tween",
-      duration: 0.5,
-      when: "beforeChildren",
+      duration: 0.4,
+      when: "afterChildren",
       staggerChildren: 0.1,
     },
   },
@@ -100,21 +120,23 @@ export const HeaderAnimation = {
 
 export const TitleAnimation = {
   open: {
-    y: [300, 0],
+    y: [200, 0],
+    opacity: [0, 1],
     transition: {
       type: "tween",
-      duration: 0.8,
+      duration: 0.4,
       when: "beforeChildren",
       staggerChildren: 0.2,
     },
   },
   closed: {
-    y: 300,
+    y: [0, 200],
+    opacity: [, 0],
     transition: {
       type: "tween",
-      duration: 0.8,
-      when: "beforeChildren",
-      staggerChildren: 0.2,
+      duration: 0.4,
+      when: "afterChildren",
+      staggerChildren: 0.1,
     },
   },
 };

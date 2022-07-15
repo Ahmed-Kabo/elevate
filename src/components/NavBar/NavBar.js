@@ -4,55 +4,71 @@ import { slideBar } from "../../Animation/Animation";
 import MeunToggle from "./MeunToggle";
 import LOGO from "../../Assets/Transparent.png";
 import NavLinks from "./NavLink";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [isOpen, ToggleCycle] = useCycle(false, true);
   return (
-    <NavStyled initial={false} animate={isOpen ? "open" : "closed"}>
-      <div className="logo">
-        <img src={LOGO} alt="/" />
-      </div>
-      <motion.div className="background" variants={slideBar} isOpen={isOpen}>
-        <NavLinks isOpen={isOpen} />
-      </motion.div>
+    <>
+      <NavStyled
+      // initial={false}
+      // animate={isOpen ? "open" : "closed"}
+      // className={isOpen ? "Z" : ""}
+      >
+        <LogoStyled>
+          <Link to="/">
+            <img src={LOGO} alt="/" />
+          </Link>
+        </LogoStyled>
+        <motion.div
+          className="background"
+          initial={false}
+          variants={slideBar}
+          isOpen={isOpen}
+          animate={isOpen ? "open" : "closed"}
+        >
+          <NavLinks isOpen={isOpen} toggle={() => ToggleCycle()} />
+        </motion.div>
+      </NavStyled>
       <MeunToggle toggle={() => ToggleCycle()} />
-    </NavStyled>
+    </>
   );
 };
 
 const NavStyled = styled(motion.nav)`
-  position: absolute;
+  /* position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
-  z-index: 10;
+  z-index: 10; */
 
   .background {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
+    z-index: 10;
     background: var(--dark);
     a {
       color: var(--lightcolor);
     }
   }
+`;
 
-  .logo {
-    width: 250px;
-    overflow: hidden;
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    transform: translate(-5%, -5%);
-    z-index: 5;
-    img {
-      width: 100%;
-      height: 100%;
-    }
+const LogoStyled = styled.div`
+  width: 200px;
+  overflow: hidden;
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  transform: translate(-5%, -5%);
+  z-index: 15;
+  img {
+    width: 100%;
+    height: 100%;
   }
 `;
 

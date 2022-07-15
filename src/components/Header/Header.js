@@ -11,7 +11,7 @@ import {
 const Header = (props) => {
   return (
     <HeaderStyled>
-      <motion.header variants={scaleOut} initial="show" animate="hidden">
+      <motion.header variants={scaleOut} initial="hidden" animate="show">
         <main className="main">
           <div className="main-flex">
             <div className="content">
