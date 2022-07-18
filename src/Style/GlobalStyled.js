@@ -23,6 +23,25 @@ export const GlobalStyle = createGlobalStyle`
         background: var(--yellow);
         color: rgb(255, 255, 255);
     }
+    ::-webkit-scrollbar {
+        width: 10px;
+        background:#000 !important;
+        border-radius:2rem;
+    }
+
+    ::-webkit-scrollbar-track {
+       width: 10px;
+        background:var(--darkGray) !important;
+        border-radius:2rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--yellow); 
+        border-radius: 2rem;
+    }
+    html{
+          scroll-behavior: smooth;
+    }
     body{
         font-family: 'Bodoni Moda', serif;
         background: var(--darkGray);
@@ -36,5 +55,7 @@ export const GlobalStyle = createGlobalStyle`
         text-decoration:none ;
         color: inherit;
     }
+
+
 
 `;

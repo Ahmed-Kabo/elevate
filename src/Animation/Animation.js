@@ -6,6 +6,7 @@ export const PageTransition = {
       duration: 0.5,
       when: "beforeChildren",
       delayChildren: 0.5,
+      // staggerChildren: 0.1,
     },
   },
   show: {
@@ -15,6 +16,7 @@ export const PageTransition = {
       duration: 0.5,
       when: "beforeChildren",
       delayChildren: 0.5,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -137,6 +139,23 @@ export const TitleAnimation = {
       duration: 0.4,
       when: "afterChildren",
       staggerChildren: 0.1,
+    },
+  },
+};
+
+export const TeamAnimation = {
+  hidden: {
+    opacity: 0,
+    scale: 0,
+  },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "tween",
+      duration: 0.4,
+      when: "beforeChildren",
+      delayChildren: 0.5,
     },
   },
 };
