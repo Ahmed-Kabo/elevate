@@ -60,7 +60,7 @@ const FooterStyled = styled.section`
     margin: 2rem 0;
     font-size: 2.8rem;
     letter-spacing: 5px;
-    color: var(--lightcolor);
+    color: #fff;
   }
   .content {
     display: flex;
@@ -74,7 +74,7 @@ const FooterStyled = styled.section`
       font-size: 4rem;
       font-weight: bold;
       line-height: 1.2;
-      color: var(--lightcolor);
+      color: #fff;
       @media screen and (max-width: 768px) {
         font-size: 2.5rem;
       }

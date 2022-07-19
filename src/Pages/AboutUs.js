@@ -12,7 +12,6 @@ import ScrollTop from "../components/ScrollTop";
 const AboutUs = () => {
   return (
     <>
-      <ScrollTop />
       <motion.div variants={PageTransition} initial="hidden" animate="show">
         <Header
           h3="Elevate"
@@ -26,6 +25,7 @@ const AboutUs = () => {
         <AboutOurTeam />
         <Footer />
       </motion.div>
+      <ScrollTop />
     </>
   );
 };

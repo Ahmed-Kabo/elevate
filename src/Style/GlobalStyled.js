@@ -7,8 +7,7 @@ export const GlobalStyle = createGlobalStyle`
         --lightcolor : #fff; 
         --dark :#000;
         --mainColor :linear-gradient( to left,  #f8a442  , #dd2c5a  );
-        --gray:#888;
-        --darkGray:#333;
+        --gray:#888;  
         --lightGray:#e1e1e1;
         --darkGray:#181818;
         --yellow:#ff8601 ;
@@ -47,6 +46,14 @@ export const GlobalStyle = createGlobalStyle`
         background: var(--darkGray);
         overflow-x: hidden;
         color: var(--lightcolor);
+        transition: all 0.5s;
+        /* &.kabo{
+          
+            --darkGray : #f5f5f5;
+            --lightcolor : #222; 
+            --lightGray:#444;
+        } */
+        
     }
     ul{
         list-style: none;

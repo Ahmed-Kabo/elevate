@@ -4,6 +4,7 @@ import User from "../Assets/call.jpg";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import { PageTransition, TeamAnimation } from "../Animation/Animation";
+import ScrollTop from "../components/ScrollTop";
 
 const OurTeam = () => {
   return (
@@ -124,6 +125,7 @@ const OurTeam = () => {
         </div>
       </OurTeamStyled>
       <Footer />
+      <ScrollTop />
     </motion.div>
   );
 };

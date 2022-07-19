@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import ContactInfo from "../components/ContactInfo";
 import { motion } from "framer-motion";
 import { PageTransition } from "../Animation/Animation";
+import ScrollTop from "../components/ScrollTop";
 
 const Contact = () => {
   return (
@@ -17,6 +18,7 @@ const Contact = () => {
       />
       <ContactInfo />
       <Footer />
+      <ScrollTop />
     </motion.div>
   );
 };

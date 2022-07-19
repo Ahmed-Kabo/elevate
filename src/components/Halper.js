@@ -34,7 +34,7 @@ export const MainButton = styled.button`
     transition: all 0.3s cubic-bezier(0.31, -0.25, 0.56, 0.87);
   }
   &:hover {
-    color: var(--lightcolor);
+    color: #fff;
     &:after {
       height: 100%;
     }

@@ -5,6 +5,7 @@ import OurServices from "../components/OurServices";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import { PageTransition } from "../Animation/Animation";
+import ScrollTop from "../components/ScrollTop";
 
 const Services = () => {
   return (
@@ -17,6 +18,7 @@ const Services = () => {
       />
       <OurServices />
       <Footer />
+      <ScrollTop />
     </motion.div>
   );
 };

@@ -1,29 +1,35 @@
-import { Container } from "react-bootstrap";
 import styled from "styled-components";
-import { SmallBox } from "./Halper";
+import { Hide, SmallBox } from "./Halper";
+import { UseScroll } from "./useScroll";
+import { motion } from "framer-motion";
+import { fadeIn, slideTop } from "../Animation/Animation";
+
 const About = () => {
+  const [element, controls] = UseScroll();
   return (
     <>
-      <AboutUsStyled>
+      <AboutUsStyled ref={element} animate={controls} initial="hidden">
         <div className="about-us">
-          <h3>
+          <motion.h3 variants={fadeIn}>
             <SmallBox />
             URBAN DESIGN & DEVELOPMENT SPECIALISTS
-          </h3>
-          <h2>
+          </motion.h3>
+          <motion.h2 variants={fadeIn}>
             Martin Building Company is a multidisciplinary design and
             development firm.
-          </h2>
+          </motion.h2>
           <div className="about-item">
             <div className="line">
               <span></span>
             </div>
-            <p className="content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-              architecto odit nesciunt labore amet quia temporibus perferendis
-              quidem eius, cupiditate, nulla laboriosam fugit consequatur error
-              veniam totam exercitationem, harum tempora.
-            </p>
+            <Hide>
+              <motion.p className="content" variants={slideTop}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+                architecto odit nesciunt labore amet quia temporibus perferendis
+                quidem eius, cupiditate, nulla laboriosam fugit consequatur
+                error veniam totam exercitationem, harum tempora.
+              </motion.p>
+            </Hide>
           </div>
         </div>
       </AboutUsStyled>
@@ -31,7 +37,7 @@ const About = () => {
   );
 };
 
-const AboutUsStyled = styled.section`
+const AboutUsStyled = styled(motion.section)`
   min-height: 100vh;
   position: relative;
   overflow: hidden;
