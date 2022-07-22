@@ -2,22 +2,46 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import IMAGE from "../Assets/head.jpg";
 import CallCenter from "../Assets/call.jpg";
-import { MainButton, SmallBox } from "./Halper";
+import { Hide, MainButton, SmallBox } from "./Halper";
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useSpring,
+} from "framer-motion";
+import { UseScroll } from "./useScroll";
+import { fadeIn, slideLeft, slideTop, slideTop2 } from "../Animation/Animation";
+
+/************************** */
 const Info = () => {
+  const [element, controls] = UseScroll();
+  const { scrollYProgress, scrollY } = useViewportScroll();
+  // const scaleX = useSpring(scrollYProgress);
+  const y = useTransform(scrollYProgress, [0, 1], [600, -900]);
+
   return (
     <InfoStyled>
       <div className="container">
-        <div className="data">
+        <motion.div
+          ref={element}
+          animate={controls}
+          className="data"
+          initial="hidden"
+        >
           <div className="image">
-            <img src={IMAGE} alt="/" />
+            <Hide>
+              <motion.img variants={slideLeft} src={IMAGE} alt="/" />
+            </Hide>
           </div>
-          <div className="heading">
-            <h2>Stunning </h2>
-            <h2>contemporary </h2>
-            <h2>architecture</h2>
-          </div>
-        </div>
-        <ServicesStyle>
+          <motion.div style={{ y }}>
+            <div className="heading">
+              <h2>Stunning </h2>
+              <h2>contemporary </h2>
+              <h2>architecture</h2>
+            </div>
+          </motion.div>
+        </motion.div>
+        <ServicesStyle ref={element} animate={controls}>
           <p>
             {" "}
             <SmallBox />
@@ -36,7 +60,14 @@ const Info = () => {
             </MainButton>
           </div>
           <div className="image">
-            <img src={CallCenter} alt="/" />
+            <motion.img
+              variants={fadeIn}
+              // animate={controls}
+              // initial="hidden"
+              // variants={slideLeft}
+              src={CallCenter}
+              alt="/"
+            />
           </div>
         </ServicesStyle>
       </div>
@@ -46,14 +77,11 @@ const Info = () => {
 
 const InfoStyled = styled.section`
   min-height: 100vh;
-
   display: grid;
   place-content: center;
   place-items: center;
   width: 100%;
-
   padding: 3rem 12.5%;
-
   /* .container {
     width: 80%;
     height: 100vh;       
@@ -104,7 +132,7 @@ const InfoStyled = styled.section`
   }
 `;
 
-export const ServicesStyle = styled.div`
+export const ServicesStyle = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   align-items: center;

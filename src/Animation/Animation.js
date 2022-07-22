@@ -24,6 +24,10 @@ export const PageTransition = {
 export const slideLeft = {
   hidden: {
     x: "100%",
+    transition: {
+      duration: 0.5,
+      when: "beforeChildren",
+    },
   },
   show: {
     x: "0%",
@@ -34,9 +38,27 @@ export const slideLeft = {
   },
 };
 
+export const slideTop2 = {
+  hidden: {
+    y: "100%",
+    transition: {
+      duration: 0.5,
+    },
+  },
+  show: {
+    y: "0%",
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
 export const fadeIn = {
   hidden: {
     opacity: 0,
+    transition: {
+      duration: 0.5,
+    },
   },
   show: {
     opacity: 1,
